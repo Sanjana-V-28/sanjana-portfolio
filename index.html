@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjana.V - Business Data Analytics Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Floating Navbar -->
+    <nav class="floating-navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Sanjana<span class="logo-dot">.</span>V</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-text animate__animated animate__fadeInUp">
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Sanjana</span></h1>
+                <p class="hero-subtitle">Business Data Analytics Graduate</p>
+                <p class="hero-description">Passionate about transforming data into actionable insights using SQL, Python, Power BI, and Tableau</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:sanjana@email.com" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-3d">
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text animate__animated animate__fadeInLeft">
+                    <p class="about-intro">
+                        I'm a passionate Business Data Analytics graduate from Vivekananda Degree College, Bangalore, actively seeking a Full-Time Role. With a strong foundation in data analysis, visualization, and business intelligence, I transform complex data into meaningful insights.
+                    </p>
+                    <p class="about-detail">
+                        My expertise lies in SQL, Advanced Excel, Power BI, Tableau, and Python. I've successfully completed multiple data analytics job simulations and real-world projects that demonstrate my ability to solve business challenges through data-driven decision-making.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>3+</h3>
+                            <p>Major Projects</p>
+                        </div>
+                        <div class="stat">
+                            <h3>6</h3>
+                            <p>Skills Mastered</p>
+                        </div>
+                        <div class="stat">
+                            <h3>8.63</h3>
+                            <p>CGPA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual animate__animated animate__fadeInRight">
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Data Driven</h3>
+                        <p>Transforming data into actionable insights</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Analytical Mind</h3>
+                        <p>Problem solving through data analysis</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Growth Oriented</h3>
+                        <p>Eager to learn and apply new tools</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <!-- Languages -->
+                <div class="skill-category animate__animated animate__fadeInUp">
+                    <h3 class="skill-title">
+                        <i class="fas fa-code"></i> Languages
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Python for Data Analytics</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-category animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+                    <h3 class="skill-title">
+                        <i class="fas fa-database"></i> Databases
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">MySQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visualization Tools -->
+                <div class="skill-category animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+                    <h3 class="skill-title">
+                        <i class="fas fa-chart-pie"></i> Visualization Tools
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Power BI</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Tableau</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spreadsheet Tools -->
+                <div class="skill-category animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
+                    <h3 class="skill-title">
+                        <i class="fas fa-table"></i> Spreadsheet Tools
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Microsoft Excel (Advanced)</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Power Query</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expertise Areas -->
+                <div class="skill-category animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+                    <h3 class="skill-title">
+                        <i class="fas fa-star"></i> Expertise
+                    </h3>
+                    <div class="expertise-tags">
+                        <span class="tag">Business Analytics</span>
+                        <span class="tag">Data Cleaning</span>
+                        <span class="tag">Model Building</span>
+                        <span class="tag">Pivot Tables</span>
+                        <span class="tag">Generative AI</span>
+                        <span class="tag">Dashboard Creation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <!-- Job Simulation 1 -->
+                <div class="timeline-item animate__animated animate__fadeInLeft">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">TATA GenAI Powered Data Analytics Job Simulation</h3>
+                        <p class="timeline-company">Forage</p>
+                        <p class="timeline-description">
+                            Analyzed financial data to identify delinquency risk patterns. Performed EDA and data cleaning using Excel, improving data quality for accurate analysis.
+                        </p>
+                        <ul class="timeline-achievements">
+                            <li>Evaluated customer repayment behaviour using credit utilization and credit score</li>
+                            <li>Developed a delinquency prediction framework using analytical insights</li>
+                            <li>Supported data-driven decision-making for effective debt collection</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job Simulation 2 -->
+                <div class="timeline-item animate__animated animate__fadeInRight">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Deloitte Data Analytics Job Simulation</h3>
+                        <p class="timeline-company">Forage</p>
+                        <p class="timeline-description">
+                            Analyzed machine telemetry data from four manufacturing facilities. Developed interactive Tableau dashboards with calculated fields and filters.
+                        </p>
+                        <ul class="timeline-achievements">
+                            <li>Identified downtime trends and equipment performance issues</li>
+                            <li>Visualized key metrics through bar charts and interactive filters</li>
+                            <li>Generated actionable insights for fair and data-driven business decisions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card animate__animated animate__fadeInUp">
+                    <div class="project-image-container">
+                        <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Customer Churn Analysis</h3>
+                        <p class="project-description">
+                            Developed an interactive Power BI dashboard analyzing customer churn patterns. Designed business KPIs including Churn Rate, Retention Rate, Revenue Loss, and CLV.
+                        </p>
+                        <div class="project-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-database"></i> SQL & Excel
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-chart-pie"></i> Power BI
+                            </span>
+                        </div>
+                        <ul class="project-highlights">
+                            <li>Identified high-risk segments for targeted retention</li>
+                            <li>Evaluated churn trends across contract types</li>
+                            <li>Supported strategic business decisions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+                    <div class="project-image-container">
+                        <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Delinquency Risk Prediction</h3>
+                        <p class="project-description">
+                            Analyzed financial data and developed a delinquency prediction framework. Improved data quality through comprehensive EDA and cleaning.
+                        </p>
+                        <div class="project-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-code"></i> Python & Excel
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-brain"></i> Analytics
+                            </span>
+                        </div>
+                        <ul class="project-highlights">
+                            <li>Identified high-risk customers</li>
+                            <li>Evaluated repayment behaviour patterns</li>
+                            <li>Supported collection strategies</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+                    <div class="project-image-container">
+                        <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Manufacturing Analytics Dashboard</h3>
+                        <p class="project-description">
+                            Created interactive Tableau dashboards for four manufacturing facilities analyzing machine telemetry data and equipment performance.
+                        </p>
+                        <div class="project-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-chart-area"></i> Tableau
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-cog"></i> Deloitte
+                            </span>
+                        </div>
+                        <ul class="project-highlights">
+                            <li>Identified downtime trends</li>
+                            <li>Visualized performance metrics</li>
+                            <li>Generated business insights</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <!-- Degree -->
+                <div class="education-card animate__animated animate__fadeInUp">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="education-title">Bachelor of Commerce in Business Data Analytics</h3>
+                    <p class="education-institution">Vivekananda Degree College</p>
+                    <p class="education-location">Rajajinagar, Bangalore</p>
+                    <div class="education-meta">
+                        <span class="gpa">CGPA: <strong>8.63</strong></span>
+                        <span class="period">2023 - 2026</span>
+                    </div>
+                </div>
+
+                <!-- Intermediate -->
+                <div class="education-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+                    <div class="education-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="education-title">Intermediate (GEBA in Commerce)</h3>
+                    <p class="education-institution">SHVNM Government Girls Pre University College</p>
+                    <p class="education-location">Bangalore</p>
+                    <div class="education-meta">
+                        <span class="gpa">Percentage: <strong>75%</strong></span>
+                        <span class="period">2023</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications & Achievements</h2>
+            <div class="certifications-grid">
+                <div class="cert-card animate__animated animate__zoomIn">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Advance Excel Certification</h3>
+                    <p>Master advanced Excel functions and data analysis</p>
+                    <span class="cert-badge">Verified</span>
+                </div>
+
+                <div class="cert-card animate__animated animate__zoomIn" style="animation-delay: 0.1s">
+                    <div class="cert-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Excel Charts and Graphs: Master Class</h3>
+                    <p>Professional data visualization techniques</p>
+                    <span class="cert-badge">Verified</span>
+                </div>
+
+                <div class="cert-card animate__animated animate__zoomIn" style="animation-delay: 0.2s">
+                    <div class="cert-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Mastering SQL with MySQL</h3>
+                    <p>Basics to Advanced SQL database skills</p>
+                    <span class="cert-badge">Verified</span>
+                </div>
+
+                <div class="cert-card animate__animated animate__zoomIn" style="animation-delay: 0.3s">
+                    <div class="cert-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>TATA GenAI Simulation</h3>
+                    <p>Data analytics with AI-powered insights</p>
+                    <span class="cert-badge">Forage</span>
+                </div>
+
+                <div class="cert-card animate__animated animate__zoomIn" style="animation-delay: 0.4s">
+                    <div class="cert-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Deloitte Simulation</h3>
+                    <p>Manufacturing analytics and insights</p>
+                    <span class="cert-badge">Forage</span>
+                </div>
+
+                <div class="cert-card animate__animated animate__zoomIn" style="animation-delay: 0.5s">
+                    <div class="cert-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Academic Excellence</h3>
+                    <p>Maintained 8.63 CGPA throughout degree</p>
+                    <span class="cert-badge">8.63 CGPA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <h2 class="section-title">My Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-item animate__animated animate__fadeInUp">
+                    <div class="expertise-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data Analysis</h3>
+                    <p>In-depth analysis of business data to identify trends, patterns, and actionable insights for strategic decision-making.</p>
+                </div>
+
+                <div class="expertise-item animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+                    <div class="expertise-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Dashboard Design</h3>
+                    <p>Creating interactive, visually appealing dashboards using Power BI and Tableau for data visualization.</p>
+                </div>
+
+                <div class="expertise-item animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+                    <div class="expertise-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Database Management</h3>
+                    <p>Proficient in SQL and MySQL for database design, querying, and optimization to support analytics.</p>
+                </div>
+
+                <div class="expertise-item animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
+                    <div class="expertise-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Business Intelligence</h3>
+                    <p>Transforming raw data into business intelligence reports that drive strategic decisions and growth.</p>
+                </div>
+
+                <div class="expertise-item animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+                    <div class="expertise-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Data Cleaning & EDA</h3>
+                    <p>Comprehensive exploratory data analysis and data preparation for quality analytics using Python and Excel.</p>
+                </div>
+
+                <div class="expertise-item animate__animated animate__fadeInUp" style="animation-delay: 0.5s">
+                    <div class="expertise-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Business Problem Solving</h3>
+                    <p>Solving complex business challenges through analytical thinking and data-driven recommendations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Projects Show</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate__animated animate__fadeInUp">
+                    <div class="testimonial-header">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Customer Retention Focus</h3>
+                    </div>
+                    <p class="testimonial-text">
+                        "My projects demonstrate a strong focus on customer retention, churn analysis, and business KPI identification - essential skills for modern business analytics."
+                    </p>
+                    <div class="testimonial-meta">
+                        <span class="meta-label">Key Skills Demonstrated</span>
+                        <span class="meta-value">Power BI, SQL, Business Analytics</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+                    <div class="testimonial-header">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Risk Analysis & Prediction</h3>
+                    </div>
+                    <p class="testimonial-text">
+                        "My work on delinquency prediction and risk assessment shows capability in financial analytics and predictive modeling using data-driven approaches."
+                    </p>
+                    <div class="testimonial-meta">
+                        <span class="meta-label">Key Skills Demonstrated</span>
+                        <span class="meta-value">Python, Excel, Data Modeling</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+                    <div class="testimonial-header">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Operational Excellence</h3>
+                    </div>
+                    <p class="testimonial-text">
+                        "My manufacturing analytics dashboard demonstrates proficiency in identifying performance issues, downtime trends, and operational improvements."
+                    </p>
+                    <div class="testimonial-meta">
+                        <span class="meta-label">Key Skills Demonstrated</span>
+                        <span class="meta-value">Tableau, Data Visualization, Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info animate__animated animate__fadeInLeft">
+                    <h3>Let's Connect</h3>
+                    <p>I'm actively seeking full-time opportunities in Data Analytics. Feel free to reach out for collaboration, opportunities, or just to discuss data insights!</p>
+                    
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 9789883800</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>sanjana.v@email.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Bangalore, India</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-socials">
+                        <a href="https://linkedin.com" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="mailto:sanjana@email.com" class="social-link">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form animate__animated animate__fadeInRight">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sanjana.V</h3>
+                    <p>Business Data Analytics Graduate | Data-Driven Decision Maker</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Me</h4>
+                    <div class="footer-socials">
+                        <a href="https://linkedin.com" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:sanjana@email.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sanjana.V | All rights reserved | Built with passion for data analytics</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js for 3D -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
