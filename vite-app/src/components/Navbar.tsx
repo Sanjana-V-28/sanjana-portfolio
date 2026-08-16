@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { colors, shadows, transitions } from '../theme/variables';
+import ThemeToggler from './ThemeToggler';
 
 const NavBar = styled.nav`
   position: fixed;
@@ -125,6 +126,9 @@ export const Navbar: React.FC = () => {
         <Logo>
           Sanjana<span className="logo-dot">.</span>V
         </Logo>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <ThemeToggler />
+        </div>
         <NavMenu $isOpen={isOpen}>
           <li><NavLink onClick={() => scrollToSection('hero')}>Home</NavLink></li>
           <li><NavLink onClick={() => scrollToSection('about')}>About</NavLink></li>
