@@ -41,9 +41,9 @@ export const SectionTitle = styled.h2`
   }
 `;
 
-export const Button = styled.button<{ variant?: 'primary' | 'secondary' }>`
+export const Button = styled.button<{ $variant?: 'primary' | 'secondary' }>`
   padding: 10px 22px;
-  border: ${props => props.variant === 'secondary' ? `2px solid ${colors.primary}` : 'none'};
+  border: ${props => props.$variant === 'secondary' ? `2px solid ${colors.primary}` : 'none'};
   border-radius: 12px;
   font-size: 1rem;
   font-weight: 600;
@@ -52,21 +52,21 @@ export const Button = styled.button<{ variant?: 'primary' | 'secondary' }>`
   display: inline-block;
   text-decoration: none;
   background: ${props => 
-    props.variant === 'primary' 
+    props.$variant === 'primary' 
       ? `linear-gradient(135deg, ${colors.primary}, ${colors.secondary})`
       : 'transparent'
   };
-  color: ${props => props.variant === 'primary' ? 'white' : colors.primary};
-  box-shadow: ${props => props.variant === 'primary' ? `0 4px 15px rgba(102, 126, 234, 0.4)` : 'none'};
+  color: ${props => props.$variant === 'primary' ? 'white' : colors.primary};
+  box-shadow: ${props => props.$variant === 'primary' ? `0 4px 15px rgba(102, 126, 234, 0.4)` : 'none'};
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: ${props => props.variant === 'primary' 
+    box-shadow: ${props => props.$variant === 'primary'
       ? `0 6px 20px rgba(102, 126, 234, 0.6)`
       : 'none'
     };
-    background: ${props => props.variant === 'secondary' ? colors.primary : undefined};
-    color: ${props => props.variant === 'secondary' ? 'white' : undefined};
+    background: ${props => props.$variant === 'secondary' ? colors.primary : undefined};
+    color: ${props => props.$variant === 'secondary' ? 'white' : undefined};
   }
 `;
 

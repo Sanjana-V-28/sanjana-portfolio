@@ -219,10 +219,10 @@ export const HeroSection: React.FC = () => {
             Passionate about transforming data into actionable insights using SQL, Python, Power BI, and Tableau
           </HeroDescription>
           <HeroCTA>
-            <Button variant="primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+            <Button $variant="primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
               Get In Touch
             </Button>
-            <Button variant="secondary" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
+            <Button $variant="secondary" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
               View Projects
             </Button>
           </HeroCTA>

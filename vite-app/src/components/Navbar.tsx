@@ -50,7 +50,7 @@ const Logo = styled.div`
   }
 `;
 
-const NavMenu = styled.ul<{ isOpen?: boolean }>`
+const NavMenu = styled.ul<{ $isOpen?: boolean }>`
   display: flex;
   list-style: none;
   gap: 2rem;
@@ -66,7 +66,7 @@ const NavMenu = styled.ul<{ isOpen?: boolean }>`
     padding: 2rem;
     border-radius: 12px;
     margin-top: 1rem;
-    display: ${props => props.isOpen ? 'flex' : 'none'};
+    display: ${props => props.$isOpen ? 'flex' : 'none'};
   }
 `;
 
@@ -81,7 +81,7 @@ const NavLink = styled.a`
   }
 `;
 
-const Hamburger = styled.div<{ isOpen?: boolean }>`
+const Hamburger = styled.div<{ $isOpen?: boolean }>`
   display: none;
   flex-direction: column;
   cursor: pointer;
@@ -95,13 +95,13 @@ const Hamburger = styled.div<{ isOpen?: boolean }>`
     border-radius: 2px;
 
     &:nth-child(1) {
-      transform: ${props => props.isOpen ? 'rotate(45deg) translate(8px, 8px)' : 'none'};
+      transform: ${props => props.$isOpen ? 'rotate(45deg) translate(8px, 8px)' : 'none'};
     }
     &:nth-child(2) {
-      opacity: ${props => props.isOpen ? '0' : '1'};
+      opacity: ${props => props.$isOpen ? '0' : '1'};
     }
     &:nth-child(3) {
-      transform: ${props => props.isOpen ? 'rotate(-45deg) translate(7px, -7px)' : 'none'};
+      transform: ${props => props.$isOpen ? 'rotate(-45deg) translate(7px, -7px)' : 'none'};
     }
   }
 
@@ -125,7 +125,7 @@ export const Navbar: React.FC = () => {
         <Logo>
           Sanjana<span className="logo-dot">.</span>V
         </Logo>
-        <NavMenu isOpen={isOpen}>
+        <NavMenu $isOpen={isOpen}>
           <li><NavLink onClick={() => scrollToSection('hero')}>Home</NavLink></li>
           <li><NavLink onClick={() => scrollToSection('about')}>About</NavLink></li>
           <li><NavLink onClick={() => scrollToSection('skills')}>Skills</NavLink></li>
@@ -135,7 +135,7 @@ export const Navbar: React.FC = () => {
           <li><NavLink onClick={() => scrollToSection('certifications')}>Certifications</NavLink></li>
           <li><NavLink onClick={() => scrollToSection('contact')}>Contact</NavLink></li>
         </NavMenu>
-        <Hamburger isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
+        <Hamburger $isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
           <span></span>
           <span></span>
           <span></span>
