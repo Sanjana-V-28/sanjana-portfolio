@@ -1,7 +1,8 @@
 import { Navbar, Footer } from './components';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import muiTheme from './theme/muiTheme';
+import { useMemo } from 'react';
+import { createAppTheme } from './theme/muiTheme';
 import {
   HeroSection,
   AboutSection,
@@ -14,8 +15,11 @@ import {
 } from './sections';
 
 function App() {
+  const prefersDark = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = useMemo(() => createAppTheme(prefersDark ? 'dark' : 'light'), [prefersDark]);
+
   return (
-    <ThemeProvider theme={muiTheme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <Navbar />
       <HeroSection />
