@@ -29,10 +29,26 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: ${colors.bgWhite};
+    /* use a soft background so the centered content doesn't look like it's inside a white box */
+    background-color: ${colors.bgLight};
+    background-image: radial-gradient(rgba(118,75,162,0.02) 0px, transparent 120px), radial-gradient(rgba(102,126,234,0.02) 0px, transparent 180px);
+    background-repeat: no-repeat;
+    background-position: left top, right bottom;
     color: ${colors.textDark};
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+  }
+
+  /* ensure the app takes full height and no accidental borders appear */
+  html, body, #root {
+    height: 100%;
+  }
+
+  img, picture, video {
+    max-width: 100%;
+    display: block;
   }
 
   a {
@@ -84,4 +100,9 @@ export const GlobalStyles = createGlobalStyle`
       transform: translateX(0);
     }
   }
+
+  /* fluid typography helpers */
+  h1 { font-size: clamp(2rem, 3.5vw, 3.5rem); }
+  h2 { font-size: clamp(1.6rem, 3vw, 3rem); }
+  h3 { font-size: clamp(1.2rem, 2.2vw, 1.6rem); }
 `;

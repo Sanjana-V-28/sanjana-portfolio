@@ -3,6 +3,7 @@ import { colors, shadows, transitions } from '../theme/variables';
 
 export const Container = styled.div`
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
   
@@ -12,7 +13,7 @@ export const Container = styled.div`
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 3vw, 3rem);
   font-weight: 700;
   margin-bottom: 3rem;
   text-align: center;
@@ -35,15 +36,15 @@ export const SectionTitle = styled.h2`
   }
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 2rem;
   }
 `;
 
 export const Button = styled.button<{ variant?: 'primary' | 'secondary' }>`
-  padding: 12px 28px;
+  padding: 10px 22px;
   border: ${props => props.variant === 'secondary' ? `2px solid ${colors.primary}` : 'none'};
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -71,6 +72,8 @@ export const Button = styled.button<{ variant?: 'primary' | 'secondary' }>`
 
 export const Section = styled.section`
   padding: 6rem 0;
+  width: 100%;
+  box-sizing: border-box;
   
   @media (max-width: 768px) {
     padding: 4rem 0;
@@ -94,13 +97,13 @@ export const Grid = styled.div<{ columns?: number }>`
 export const Card = styled.div`
   background: ${colors.bgWhite};
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.8rem;
   box-shadow: ${shadows.md};
   transition: ${transitions.default};
-  border: 1px solid ${colors.borderColor};
+  border: 1px solid rgba(0,0,0,0.04);
 
   &:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     box-shadow: ${shadows.lg};
   }
 `;
