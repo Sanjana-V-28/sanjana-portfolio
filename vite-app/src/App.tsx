@@ -1,5 +1,7 @@
-import { GlobalStyles } from './theme/GlobalStyles';
 import { Navbar, Footer } from './components';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import muiTheme from './theme/muiTheme';
 import {
   HeroSection,
   AboutSection,
@@ -13,8 +15,8 @@ import {
 
 function App() {
   return (
-    <>
-      <GlobalStyles />
+    <ThemeProvider theme={muiTheme}>
+      <CssBaseline />
       <Navbar />
       <HeroSection />
       <AboutSection />
@@ -25,7 +27,7 @@ function App() {
       <CertificationsSection />
       <ContactSection />
       <Footer />
-    </>
+    </ThemeProvider>
   );
 }
 
