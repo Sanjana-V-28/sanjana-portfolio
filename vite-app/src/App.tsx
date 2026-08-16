@@ -1,5 +1,5 @@
 import { GlobalStyles } from './theme/GlobalStyles';
-import { Navbar } from './components';
+import { Navbar, Footer } from './components';
 import {
   HeroSection,
   AboutSection,
@@ -24,6 +24,7 @@ function App() {
       <EducationSection />
       <CertificationsSection />
       <ContactSection />
+      <Footer />
     </>
   );
 }

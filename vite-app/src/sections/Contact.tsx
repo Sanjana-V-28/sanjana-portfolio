@@ -1,11 +1,48 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { colors, shadows, transitions } from '../theme/variables';
-import { Container, Section, SectionTitle, Button } from '../components/CommonStyles';
+import { colors, transitions } from '../theme/variables';
+import { Container, Section } from '../components/CommonStyles';
 
 const ContactWrapper = styled(Section)`
-  background: linear-gradient(135deg, ${colors.primary}, ${colors.secondary});
+  background: linear-gradient(135deg, ${colors.primary} 0%, ${colors.secondary} 100%);
   color: white;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+  }
+`;
+
+const ContactTitle = styled.h2`
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const ContactContent = styled.div`
@@ -13,6 +50,8 @@ const ContactContent = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  position: relative;
+  z-index: 1;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -22,6 +61,8 @@ const ContactContent = styled.div`
 
 const ContactInfo = styled.div`
   animation: fadeInLeft 0.8s ease-out;
+  position: relative;
+  z-index: 1;
 
   @keyframes fadeInLeft {
     from {
@@ -42,7 +83,7 @@ const ContactInfo = styled.div`
 
   p {
     font-size: 1.1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     line-height: 1.8;
     opacity: 0.95;
   }
@@ -51,34 +92,44 @@ const ContactInfo = styled.div`
 const ContactMethods = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 `;
 
 const ContactMethod = styled.a`
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
   color: white;
   text-decoration: none;
   transition: ${transitions.default};
-  padding: 1rem;
-  border-radius: 8px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(15px);
+    border-color: rgba(255, 255, 255, 0.4);
   }
 
   .icon {
-    font-size: 1.8rem;
-    width: 50px;
-    height: 50px;
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
+    border-radius: 12px;
+    flex-shrink: 0;
+    transition: ${transitions.default};
+  }
+
+  &:hover .icon {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
   }
 
   .info {
@@ -87,7 +138,10 @@ const ContactMethod = styled.a`
     .label {
       font-size: 0.9rem;
       opacity: 0.85;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
     }
 
     .value {
@@ -100,9 +154,11 @@ const ContactMethod = styled.a`
 const ContactForm = styled.form`
   animation: fadeInRight 0.8s ease-out;
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
-  padding: 2.5rem;
-  box-shadow: ${shadows.lg};
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
 
   @keyframes fadeInRight {
     from {
@@ -114,57 +170,84 @@ const ContactForm = styled.form`
       transform: translateX(0);
     }
   }
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
 `;
 
 const FormGroup = styled.div`
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
 `;
 
 const Label = styled.label`
   display: block;
   color: ${colors.textDark};
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
   font-size: 0.95rem;
 `;
 
 const Input = styled.input`
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid ${colors.borderColor};
-  border-radius: 8px;
+  padding: 1rem;
+  border: 2px solid ${colors.borderColor};
+  border-radius: 12px;
   font-size: 1rem;
   font-family: inherit;
   transition: ${transitions.default};
+  background: white;
 
   &:focus {
     outline: none;
     border-color: ${colors.primary};
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    background: #fafbff;
   }
 `;
 
 const TextArea = styled.textarea`
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid ${colors.borderColor};
-  border-radius: 8px;
+  padding: 1rem;
+  border: 2px solid ${colors.borderColor};
+  border-radius: 12px;
   font-size: 1rem;
   font-family: inherit;
   resize: vertical;
   min-height: 150px;
   transition: ${transitions.default};
+  background: white;
 
   &:focus {
     outline: none;
     border-color: ${colors.primary};
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    background: #fafbff;
   }
 `;
 
-const SubmitButton = styled(Button)`
+const SubmitButton = styled.button`
   width: 100%;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, ${colors.primary}, ${colors.secondary});
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
   margin-top: 1rem;
+  transition: ${transitions.default};
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
 `;
 
 export const ContactSection: React.FC = () => {
@@ -197,12 +280,11 @@ export const ContactSection: React.FC = () => {
   return (
     <ContactWrapper id="contact">
       <Container>
-        <SectionTitle style={{ color: 'white', marginBottom: '3rem' }}>Get In Touch</SectionTitle>
+        <ContactTitle>Let's Get In Touch</ContactTitle>
         <ContactContent>
           <ContactInfo>
-            <h2>Let's Connect</h2>
             <p>
-              I'm always interested in hearing about new opportunities and projects. Feel free to reach out!
+              I'm always interested in hearing about new opportunities, exciting projects, and interesting ideas. Don't hesitate to reach out if you have something to discuss!
             </p>
             <ContactMethods>
               <ContactMethod href="mailto:sanjana@email.com">
@@ -245,7 +327,7 @@ export const ContactSection: React.FC = () => {
           </ContactInfo>
           <ContactForm onSubmit={handleSubmit}>
             <FormGroup>
-              <Label htmlFor="name">Name</Label>
+              <Label htmlFor="name">Full Name</Label>
               <Input
                 type="text"
                 id="name"
@@ -253,11 +335,11 @@ export const ContactSection: React.FC = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder="Your name"
+                placeholder="Your full name"
               />
             </FormGroup>
             <FormGroup>
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">Email Address</Label>
               <Input
                 type="email"
                 id="email"
@@ -276,11 +358,11 @@ export const ContactSection: React.FC = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                placeholder="Your message..."
+                placeholder="Tell me about your project or inquiry..."
               />
             </FormGroup>
-            <SubmitButton variant="primary" type="submit">
-              {submitted ? 'Message Sent! ✓' : 'Send Message'}
+            <SubmitButton type="submit">
+              {submitted ? '✓ Message Sent Successfully!' : 'Send Message'}
             </SubmitButton>
           </ContactForm>
         </ContactContent>

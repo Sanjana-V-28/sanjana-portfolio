@@ -9,7 +9,41 @@ const HeroWrapper = styled(Section)`
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(135deg, ${colors.bgLight} 0%, ${colors.bgWhite} 100%);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.2), transparent);
+    border-radius: 50%;
+    top: -100px;
+    left: -100px;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(240, 147, 251, 0.15), transparent);
+    border-radius: 50%;
+    bottom: 50px;
+    right: -50px;
+    animation: float 10s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(40px);
+    }
+  }
 `;
 
 const HeroContent = styled(Container)`
