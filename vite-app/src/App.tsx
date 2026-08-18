@@ -1,5 +1,5 @@
 import { Navbar, Footer } from './components';
-import { AppThemeProvider } from './theme/ThemeContext';
+import { GlobalStyles } from './theme/GlobalStyles';
 import {
   HeroSection,
   AboutSection,
@@ -13,7 +13,8 @@ import {
 
 function App() {
   return (
-    <AppThemeProvider>
+    <>
+      <GlobalStyles />
       <Navbar />
       <HeroSection />
       <AboutSection />
@@ -24,7 +25,7 @@ function App() {
       <CertificationsSection />
       <ContactSection />
       <Footer />
-    </AppThemeProvider>
+    </>
   );
 }
 

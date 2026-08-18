@@ -1,19 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { colors } from '../theme/variables';
 import { Container, Section, SectionTitle } from '../components/CommonStyles';
 
 const SkillsWrapper = styled(Section)`
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.06) 0%, rgba(118, 75, 162, 0.05) 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -15%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(240, 147, 251, 0.1), transparent);
+    border-radius: 50%;
+  }
 `;
 
-const SkillsGrid = styled.div`
+const SkillsGrid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2.5rem;
+  position: relative;
+  z-index: 1;
 `;
 
-const SkillCategory = styled.div`
+const SkillCategory = styled(motion.div)`
   background: white;
   border-radius: 16px;
   padding: 2.5rem;
@@ -46,7 +62,7 @@ const SkillCategory = styled.div`
   &:nth-child(4) { animation-delay: 0.3s; }
 `;
 
-const SkillTitle = styled.h3`
+const SkillTitle = styled(motion.h3)`
   font-size: 1.4rem;
   color: ${colors.textDark};
   margin-bottom: 2rem;
@@ -54,6 +70,7 @@ const SkillTitle = styled.h3`
   align-items: center;
   gap: 1rem;
   font-weight: 700;
+  letter-spacing: 0.5px;
 
   i {
     font-size: 1.8rem;
@@ -64,13 +81,13 @@ const SkillTitle = styled.h3`
   }
 `;
 
-const SkillItems = styled.div`
+const SkillItems = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
 `;
 
-const SkillItem = styled.div`
+const SkillItem = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
@@ -97,21 +114,21 @@ const SkillValue = styled.span`
   font-size: 1rem;
 `;
 
-const SkillBar = styled.div`
+const SkillBar = styled(motion.div)`
   height: 10px;
   background: linear-gradient(90deg, ${colors.bgLight} 0%, #e8ecf8 100%);
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 `;
 
-const SkillProgress = styled.div<{ width: number }>`
+const SkillProgress = styled(motion.div)<{ width: number }>`
   height: 100%;
   width: ${props => props.width}%;
   background: linear-gradient(90deg, ${colors.primary} 0%, ${colors.secondary} 100%);
   border-radius: 10px;
-  transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 0 10px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 0 15px rgba(102, 126, 234, 0.5);
   position: relative;
 
   &::after {
@@ -140,6 +157,34 @@ const SkillProgress = styled.div<{ width: number }>`
   }
 `;
 
+const categoryVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.5 },
+  },
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
 export const SkillsSection: React.FC = () => {
   const skills = {
     languages: [
@@ -166,77 +211,134 @@ export const SkillsSection: React.FC = () => {
     <SkillsWrapper id="skills">
       <Container>
         <SectionTitle>Technical Skills</SectionTitle>
-        <SkillsGrid>
-          <SkillCategory>
+        <SkillsGrid
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+        >
+          <SkillCategory
+            variants={categoryVariants}
+            whileHover={{ y: -10 }}
+          >
             <SkillTitle>
-              <i className="fas fa-code"></i> Languages
+              <motion.i
+                className="fas fa-code"
+                whileHover={{ scale: 1.2, rotate: 10 }}
+              />
+              Languages
             </SkillTitle>
-            <SkillItems>
+            <SkillItems variants={containerVariants} initial="hidden" animate="visible">
               {skills.languages.map((skill, idx) => (
-                <SkillItem key={idx}>
+                <SkillItem key={idx} variants={itemVariants}>
                   <SkillName>
                     <SkillLabel>{skill.name}</SkillLabel>
                     <SkillValue>{skill.level}%</SkillValue>
                   </SkillName>
                   <SkillBar>
-                    <SkillProgress width={skill.level} />
+                    <SkillProgress
+                      width={skill.level}
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${skill.level}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: idx * 0.1 }}
+                    />
                   </SkillBar>
                 </SkillItem>
               ))}
             </SkillItems>
           </SkillCategory>
 
-          <SkillCategory>
+          <SkillCategory
+            variants={categoryVariants}
+            whileHover={{ y: -10 }}
+          >
             <SkillTitle>
-              <i className="fas fa-database"></i> Databases
+              <motion.i
+                className="fas fa-database"
+                whileHover={{ scale: 1.2, rotate: 10 }}
+              />
+              Databases
             </SkillTitle>
-            <SkillItems>
+            <SkillItems variants={containerVariants} initial="hidden" animate="visible">
               {skills.databases.map((skill, idx) => (
-                <SkillItem key={idx}>
+                <SkillItem key={idx} variants={itemVariants}>
                   <SkillName>
                     <SkillLabel>{skill.name}</SkillLabel>
                     <SkillValue>{skill.level}%</SkillValue>
                   </SkillName>
                   <SkillBar>
-                    <SkillProgress width={skill.level} />
+                    <SkillProgress
+                      width={skill.level}
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${skill.level}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: idx * 0.1 }}
+                    />
                   </SkillBar>
                 </SkillItem>
               ))}
             </SkillItems>
           </SkillCategory>
 
-          <SkillCategory>
+          <SkillCategory
+            variants={categoryVariants}
+            whileHover={{ y: -10 }}
+          >
             <SkillTitle>
-              <i className="fas fa-chart-pie"></i> Visualization
+              <motion.i
+                className="fas fa-chart-pie"
+                whileHover={{ scale: 1.2, rotate: 10 }}
+              />
+              Visualization
             </SkillTitle>
-            <SkillItems>
+            <SkillItems variants={containerVariants} initial="hidden" animate="visible">
               {skills.visualization.map((skill, idx) => (
-                <SkillItem key={idx}>
+                <SkillItem key={idx} variants={itemVariants}>
                   <SkillName>
                     <SkillLabel>{skill.name}</SkillLabel>
                     <SkillValue>{skill.level}%</SkillValue>
                   </SkillName>
                   <SkillBar>
-                    <SkillProgress width={skill.level} />
+                    <SkillProgress
+                      width={skill.level}
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${skill.level}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: idx * 0.1 }}
+                    />
                   </SkillBar>
                 </SkillItem>
               ))}
             </SkillItems>
           </SkillCategory>
 
-          <SkillCategory>
+          <SkillCategory
+            variants={categoryVariants}
+            whileHover={{ y: -10 }}
+          >
             <SkillTitle>
-              <i className="fas fa-tools"></i> Tools & Tech
+              <motion.i
+                className="fas fa-tools"
+                whileHover={{ scale: 1.2, rotate: 10 }}
+              />
+              Tools & Tech
             </SkillTitle>
-            <SkillItems>
+            <SkillItems variants={containerVariants} initial="hidden" animate="visible">
               {skills.tools.map((skill, idx) => (
-                <SkillItem key={idx}>
+                <SkillItem key={idx} variants={itemVariants}>
                   <SkillName>
                     <SkillLabel>{skill.name}</SkillLabel>
                     <SkillValue>{skill.level}%</SkillValue>
                   </SkillName>
                   <SkillBar>
-                    <SkillProgress width={skill.level} />
+                    <SkillProgress
+                      width={skill.level}
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${skill.level}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: idx * 0.1 }}
+                    />
                   </SkillBar>
                 </SkillItem>
               ))}
